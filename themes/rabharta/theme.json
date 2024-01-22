@@ -1,0 +1,38 @@
+{
+    "name": "Rabharta 2024",
+    "description": "Hugo Theme for rabharta.ie",
+    "homepage": "http://github.com/rabharta/rabharta.github.io",
+    "tags": [
+        "blog",
+        "minimal",
+        "responsive"
+    ],
+    "features": [
+        "blog"
+    ],
+    "min_version": "1.0.0",
+    "author": {
+        "name": "Edward Galligan",
+        "homepage": "https://github.com/edwardgalligan"
+    },
+    "services": {
+        "disqus": {
+            "disable": true
+        },
+        "googleAnalytics": {
+            "disable": true
+        },
+        "youtube": {
+            "disable": true
+        },
+        "twitter": {
+            "simple": true
+        },
+        "instagram": {
+            "simple": true
+        },
+        "vimeo": {
+            "simple": true
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<div id="wrapper">
+    <section class="main style1">
+        <div>
+            <section class="main style1">
+                <header class="small">
+                    <h1>{{ .Params.Name }}</h1>
+                    <em>{{ .Params.constituency }}</em>
+                </header>
+
+                {{ with .Params.photo }}
+                <div class="image filtered" data-position="center">
+                    <img src="{{ . }}" alt="Photo of {{ $.Params.Name }}" />
+                </div>
+                {{ end }}
+            </section>
+        </div>
+        <div class="inner">
+            {{.Content}}
+        </div>
+    </section>
+</div>
+
+{{ end }}

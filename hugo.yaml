@@ -1,0 +1,49 @@
+baseURL: ''
+title: 'Rabharta'
+theme: 'rabharta'
+copyright: 'Copyright 2023 © An Rabharta Glass - Green Left. All rights reserved.'
+contentdir: 'content'
+layoutdir: 'layouts'
+publishdir: 'public'
+themesDir: 'themes'
+languageCode: 'en'
+defaultContentLanguage: 'en'
+enableGitInfo: true
+metaDataFormat: 'yaml'
+pygmentsUseClasses: true
+pygmentCodeFences: true
+
+menus:
+  main:
+  - name: 'Join Us'
+    pageRef: '/join/'
+    weight: 1
+  - name: 'About Us'
+    pageRef: '/about/'
+    weight: 2
+  - name: 'People'
+    pageRef: '/people/'
+    weight: 3
+  - parent: 'People'
+    name: 'Liam Sinclair'
+    pageRef: '/liam-sinclair/'
+    weight: 1
+  - parent: 'People'
+    name: 'Lorna Bogue'
+    pageRef: '/lorna-bogue/'
+    weight: 2
+  - name: 'Our Values'
+    pageRef: '/values/'
+    weight: 4
+  - name: 'Our Vision'
+    pageRef: '/vision/'
+    weight: 5
+  - name: 'Members'
+    pageRef: '/member/'
+    weight: 6
+
+languages:
+  en:
+    title: 'Rabharta'
+  ga:
+    title: 'Rabharta'

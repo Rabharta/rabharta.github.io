@@ -1,0 +1,30 @@
+{{ $currentPage := . }}
+
+<header id="header">
+    <div class="headerWrapper">
+        <div class="logo">
+            <a class="site-title" href="{{ relLangURL "/" }}">
+                <!--img src="/img/an-rabharta-glas-logo.svg" alt="An Rabharta Glas - Green Left" title="An Rabharta Glas - Green Left" /-->
+                {{ .Site.Title }}
+            </a>
+        </div>
+
+        <!--
+        {{ with .Site.Params.tagline }}
+        <div class="site-subtitle">{{ . }}</div>
+        {{ end }}
+        -->
+        <nav id="nav" class="site-nav">
+            <ul class="main-nav">
+                {{ range .Site.Menus.main }}
+                <li>
+                    <a class="{{if or ($currentPage.IsMenuCurrent " main" .) ($currentPage.HasMenuCurrent "main" .)
+                        }}active{{end}}" href="{{.URL}}">
+                        <i class="fa-li fa {{ .Pre }} fa-lg"></i><span>{{ .Name }}</span>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</header>
