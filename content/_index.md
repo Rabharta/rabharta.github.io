@@ -5,15 +5,15 @@ bannerheading: |
   Green Left
 bannersubheading: Comhshaol agus Comhionannas
 banneractions:
-    - action: Learn more
-      link: /about/
-    - action: Join us
-      link: /join/
+  - action: Learn more
+    link: /about/
+  - action: Join us
+    link: /join/
 heading: Working for a just transition
 image: /assets/images/dramatic_landscape_full.jpg
 actions:
-    - action: Our Vision
-      link: /vision/
+  - action: Our Vision
+    link: /vision/
 date: 2020-12-10 11:45:00
 ---
 

@@ -1,20 +1,143 @@
+# local_backend: true
 backend:
   name: github
   repo: rabharta/rabharta.github.io
   branch: main
   site_domain: a077c463-68c4-4e9c-b6fa-e25f625d1e13
-media_folder: static/img
-public_folder: /img
+media_folder: static/assets
+public_folder: /assets
+logo_url: /images/logo.svg
+
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
+  - name: 'pages'
+    label: 'Pages'
+    files:
+      - label: 'Homepage'
+        name: 'homepage'
+        file: 'content/_index.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Banner Heading', name: 'bannerheading', widget: 'text'}
+          - {label: 'Banner Subheading', name: 'bannersubheading', widget: 'string'}
+          - label: 'Banner Actions'
+            name: 'banneractions'
+            widget: 'list'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              # TODO: Make a custom relation widget to choose from all content
+              - {label: 'Link', name: 'link', widget: 'string'}
+          - {label: 'Content Heading', name: 'heading', widget: 'string'}
+          - {label: 'Content Image', name: 'image', widget: 'image'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+          - label: 'Content Actions'
+            name: 'actions'
+            widget: 'list'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              # TODO: Make a custom relation widget to choose from all content
+              - {label: 'Link', name: 'link', widget: 'string'}
+      - label: 'About page'
+        name: 'about'
+        file: 'content/about/index.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'People page'
+        name: 'people'
+        file: 'content/people.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Values page'
+        name: 'values'
+        file: 'content/values/index.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
+          - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+          - label: 'Actions'
+            name: 'actions'
+            widget: 'list'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              # TODO: Make a custom relation widget to choose from all content
+              - {label: 'Link', name: 'link', widget: 'string'}
+      - label: 'Vision page'
+        name: 'vision'
+        file: 'content/vision/index.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
+          - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+          - label: 'Actions'
+            name: 'actions'
+            widget: 'list'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              # TODO: Make a custom relation widget to choose from all content
+              - {label: 'Link', name: 'link', widget: 'string'}
+  - name: 'programme'
+    label: 'Programme pages'
+    folder: 'content/policy/'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    editor:
-      preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
+      - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Actions'
+        name: 'actions'
+        widget: 'list'
+        fields:
+          - {label: 'Label', name: 'action', widget: 'string'}
+          # TODO: Make a custom relation widget to choose from all content
+          - {label: 'Link', name: 'link', widget: 'string'}
+  - name: 'people'
+    label: 'Candidate profiles'
+    folder: 'content/people/'
+    create: true
+    fields:
+      - {label: 'Name', name: 'name', widget: 'string'}
+      - label: 'Constituency'
+        name: 'constituency'
+        widget: 'string'
+        # widget: 'select'
+        # options: ['Belfast East BC', 'Belfast North BC', 'Belfast South BC', 'Belfast West BC', 'Carlow-Kilkenny', 'Cavan-Monaghan', 'Clare', 'Cork East', 'Cork North-Central', 'Cork North-West', 'Cork South-Central', 'Cork South-West', 'Donegal', 'Dublin Bay North', 'Dublin Bay South', 'Dublin Central', 'Dublin Fingal', 'Dublin Mid-West', 'Dublin North-West', 'Dublin Rathdown', 'Dublin South-Central', 'Dublin South-West', 'Dublin West', 'Dún Laoghaire', 'East Antrim CC', 'East Londonderry CC', 'Fermanagh & South Tyrone CC', 'Foyle CC', 'Galway East', 'Galway West', 'Kerry', 'Kildare North', 'Kildare South', 'Lagan Valley CC', 'Laois-Offaly', 'Limerick City', 'Limerick County', 'Longford-Westmeath', 'Louth', 'Mayo', 'Meath East', 'Meath West', 'Mid Ulster CC', 'Newry & Armagh CC', 'North Antrim CC', 'North Down CC', 'Roscommon-Galway', 'Sligo-Leitrim', 'South Antrim CC', 'South Down CC', 'Strangford CC', 'Tipperary', 'Upper Bann CC', 'Waterford', 'West Tyrone CC', 'Wexford', 'Wicklow']
+      - {label: 'Candidate Photo', name: 'photo', widget: 'image', choose_url: false}
+      - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Actions'
+        name: 'actions'
+        widget: 'list'
+        fields:
+          - {label: 'Label', name: 'action', widget: 'string'}
+          # TODO: Make a custom relation widget to choose from all content
+          - {label: 'Link', name: 'link', widget: 'string'}
+  - name: 'contact-pages'
+    label: 'Contact Pages'
+    files:
+      - label: 'Contact Page'
+        name: 'contact-us'
+        file: 'content/contact-us.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Child Protection Officer'
+        name: 'child-protection-officer'
+        file: 'content/contact-us/child-protection-officer.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Contact Form Success Page'
+        name: 'contact-us-sent'
+        file: 'content/contact-us/sent.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Contact Form Error Page'
+        name: 'contact-us-failure'
+        file: 'content/contact-us/failure.md'
+        fields:
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}

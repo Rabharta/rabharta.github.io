@@ -7,10 +7,6 @@ aliases:
   - /policy/economy.html
 ---
 
-{% pagePreview %}
-This is the pagePreview found in policy/economy.md 
-{% endpagePreview %}
-
 **An Economy that Invests in Communities & People**
 The economy of the future is one that is one that is owned by the people. A Green New Deal and National Investment bank will be the foundation of a green, local economy that refocuses on health and wellbeing over profit.
 

@@ -1,13 +1,15 @@
 ---
 title: Housing 
+banner: /assets/images/coponhousingcover.png
 date: 2021-09-17 13:00:00
 icon: fas fa-leaf accent3
+actions:
+  - action: 'Read our Response'
+    link: /files/confirmation-of-position/cop_on_housing.pdf
 aliases:
   - /policy/housing/
   - /policy/housing.html
 ---
-
-{% pagePreview %} This is the pagePreview found in policy/housing.md {% endpagePreview %}
 
 <img src="/assets/images/coponhousingcover.png" alt="A picture of the cover of our housing policy response document. it's a photo of a curved, well designed, red brick social housing building." title="Confirmation of Position on Housing document cover."/>
 
@@ -21,5 +23,3 @@ In this document we outline a series of measures that the state can engage in **
 - Housing cooperatives and alternative tenures 
 - Sales-price controls 
 - Rent controls
-
-{% actions %} "Read our Response": "/files/confirmation-of-position/cop_on_housing.pdf" {% endactions %}
