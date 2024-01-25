@@ -16,30 +16,38 @@ pygmentCodeFences: true
 menus:
   main:
   - name: 'Join Us'
-    pageRef: '/join/'
+    url: '/join'
     weight: 1
   - name: 'About Us'
-    pageRef: '/about/'
+    url: '/about'
     weight: 2
   - name: 'People'
-    pageRef: '/people/'
+    url: '/people'
     weight: 3
   - parent: 'People'
     name: 'Liam Sinclair'
-    pageRef: '/liam-sinclair/'
+    url: '/people/liam-sinclair'
     weight: 1
   - parent: 'People'
     name: 'Lorna Bogue'
-    pageRef: '/lorna-bogue/'
+    url: '/people/lorna-bogue'
     weight: 2
   - name: 'Our Values'
-    pageRef: '/values/'
+    url: '/values'
     weight: 4
   - name: 'Our Vision'
-    pageRef: '/vision/'
+    url: '/vision'
     weight: 5
+  - parent: 'Our Vision'
+    name: 'Housing'
+    url: '/policy/housing'
+    weight: 1
+  - parent: 'Our Vision'
+    name: 'Climate'
+    url: '/policy/climate'
+    weight: 1
   - name: 'Members'
-    pageRef: '/member/'
+    url: '/member'
     weight: 6
 
 languages:
