@@ -1,7 +1,7 @@
 ---
 name: Cllr Lorna Bogue
 constituency: Cork City South East
-photo: /assets/images/people/lornabogue_normal.jpg
+photo: /uploads/images/people/lornabogue_normal.jpg
 date: 2021-06-02 19:09:00
 aliases:
   - /people/lorna-bogue.html

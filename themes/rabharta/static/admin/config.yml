@@ -4,8 +4,8 @@ backend:
   repo: rabharta/rabharta.github.io
   branch: main
   site_domain: a077c463-68c4-4e9c-b6fa-e25f625d1e13
-media_folder: static/assets
-public_folder: /assets
+media_folder: static/uploads
+public_folder: /uploads
 logo_url: /images/logo.svg
 
 collections:

@@ -10,7 +10,7 @@ banneractions:
   - action: Join us
     link: /join/
 heading: Working for a just transition
-image: /assets/images/dramatic_landscape_full.jpg
+image: /uploads/images/dramatic_landscape_full.jpg
 actions:
   - action: Our Vision
     link: /vision/

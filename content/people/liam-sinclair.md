@@ -1,7 +1,7 @@
 ---
 name: Cllr Liam Sinclair
 constituency: Tallaght Central
-photo: /assets/images/people/liam.jpg
+photo: /uploads/images/people/liam.jpg
 date: 2021-06-02 19:09:00
 aliases:
   - /people/liam-sinclair.html

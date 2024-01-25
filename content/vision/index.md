@@ -1,7 +1,7 @@
 ---
 title: Vision 
 subtitle: Learn more about our vision for an eco-socialist Ireland.
-banner: /assets/images/hawthorn_normal.jpg
+banner: /uploads/images/hawthorn_normal.jpg
 actions:
     - action: Read our Programme Document
       link: /files/arg-gl_programme.pdf

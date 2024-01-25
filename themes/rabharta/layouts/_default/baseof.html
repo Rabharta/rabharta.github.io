@@ -14,7 +14,7 @@
     {{ end }}
 
     {{ template "_internal/opengraph.html" . }}
-    {{/*  {{ template "_internal/twitter_cards.html" . }}  */}}
+    {{ template "_internal/twitter_cards.html" . }}
 
     {{ with resources.Get "scss/doc.scss" }}
         {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
