@@ -1,10 +1,11 @@
 ---
 name: Cllr Lorna Bogue
 constituency: Cork City South East
-photo: /uploads/images/people/lornabogue_normal.jpg
+photo: /uploads/lornabogue_normal.jpg
 date: 2021-06-02 19:09:00
 aliases:
   - /people/lorna-bogue.html
+list_page: false
 ---
 
 Lorna is a city councillor representing Cork City South-East on Cork City Council since 2019. She holds a masters in economic analysis and has previously worked in call centres for multinational companies and financial services - giving her a very clear insight into the precarious work conditions, poor pay and exploitative practices of these companies.

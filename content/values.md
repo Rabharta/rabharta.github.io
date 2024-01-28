@@ -1,7 +1,7 @@
 ---
 title: Our Values 
 subtitle: What we think is important to how we work
-banner: /uploads/images/dandelion_normal.jpg
+banner: /uploads/dandelion_normal.jpg
 actions:
     - action: Read our party constitution
       link: /files/arg-gl_constitution.pdf

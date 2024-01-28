@@ -88,3 +88,8 @@ $fa-font-path: "../fontawesome-free-5.15.1-web/webfonts";
 		@include vendor('transform', 'scale(1.125)');
 	}
 }
+
+#wrapper section.main.style1 header.small p img,
+#wrapper section.main.style1 div.inner p img {
+	max-width: 90%;
+}

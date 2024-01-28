@@ -1,6 +1,6 @@
 ---
 title: Climate and Environment 
-banner: /uploads/images/politicisingclimatecover.JPG
+banner: /uploads/politicisingclimatecover.JPG
 date: 2020-12-10 11:45:00
 icon: fas fa-leaf accent3
 actions:
@@ -11,7 +11,7 @@ aliases:
   - /policy/climate.html
 ---
 
-<img src="/uploads/images/politicisingclimatecover.JPG" alt="A picture of the cover of our Climate and Labour Programme. It is entitled Politicising Climate: 
+<img src="/uploads/politicisingclimatecover.JPG" alt="A picture of the cover of our Climate and Labour Programme. It is entitled Politicising Climate: 
 The Alternative to Eco-Austerity. The photo behind the title is of an old stone wall." title="Politicising Climate programme document cover."/>
 
 *For the many workers, carers, students and others who have become politicised by the climate emergency, the prospects for the required radical transformation of economy and society in Ireland and globally seem dismal. The IPCC was clear in its latest report. Enough resources and capital exist in the world to avert planetary catastrophe, but the ruling economic system prevents action. This document is aimed at those struggling to operationalise their political concerns around climate, the cost of living and how to be effective activists in their workplaces, homes and communities.* 

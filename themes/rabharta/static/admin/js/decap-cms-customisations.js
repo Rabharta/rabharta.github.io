@@ -4,14 +4,41 @@ const pageWrap = (contents) => {
     )
 }
 
-const HomepagePreview = createClass({
+const SinglePagePreview = createClass({
     render() {
         const data = this.props.entry.getIn(['data']).toJS();
         const body = this.props.widgetFor('body');
 
-        console.log({
-            data
-        });
+        const contentSection = h('section', {className: 'main style1'}, [
+            h('div', {}, h('section', {className: 'main style1'}, [
+                h('header', {className: 'small'}, [
+                    h('h1', {}, data.title),
+                    h('p', {}, data.subtitle)
+                ]),
+                data.banner ? h('div', {className: 'image filtered', dataPosition: 'center'},
+                    h('img', {src: data.banner, alt: data.title})
+                ) : null
+            ])),
+            h('div', {className: 'inner'}, [
+                body,
+                data.actions ? 
+                    h('div', {className: 'inner'}, h('ul', {className: 'actions special'},
+                        data.actions.map(item => h('li', {},
+                            h('a', {className: 'button next', href: item.link}, item.action)
+                        ))
+                    )) : null
+            ])
+        ])
+
+        return pageWrap([
+            contentSection
+        ])
+    }
+});
+const HomepagePreview = createClass({
+    render() {
+        const data = this.props.entry.getIn(['data']).toJS();
+        const body = this.props.widgetFor('body');
 
         const bannerSection = h('section', {className: 'banner'}, [
             h('div', {className: 'image', dataPosition: 'right'},
@@ -55,5 +82,9 @@ const HomepagePreview = createClass({
     }
 });
 
-CMS.registerPreviewStyle('/theme/css/style.css');
+CMS.registerPreviewStyle('/admin/css/preview.css');
 CMS.registerPreviewTemplate('homepage', HomepagePreview);
+CMS.registerPreviewTemplate('about', SinglePagePreview);
+CMS.registerPreviewTemplate('people', SinglePagePreview);
+CMS.registerPreviewTemplate('values', SinglePagePreview);
+CMS.registerPreviewTemplate('vision', SinglePagePreview);

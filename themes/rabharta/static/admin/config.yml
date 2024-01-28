@@ -6,7 +6,7 @@ backend:
   site_domain: a077c463-68c4-4e9c-b6fa-e25f625d1e13
 media_folder: static/uploads
 public_folder: /uploads
-logo_url: /images/an-rabharta-glas-logo.svg
+logo_url: /theme/images/an-rabharta-glas-logo.svg
 
 collections:
   - name: 'pages'
@@ -38,20 +38,20 @@ collections:
               - {label: 'Link', name: 'link', widget: 'string'}
       - label: 'About page'
         name: 'about'
-        file: 'content/about/index.md'
+        file: 'content/about.md'
         fields:
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
           - {label: 'Content', name: 'body', widget: 'markdown'}
       - label: 'People page'
         name: 'people'
-        file: 'content/people.md'
+        file: 'content/people/_index.md'
         fields:
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Content', name: 'body', widget: 'markdown'}
       - label: 'Values page'
         name: 'values'
-        file: 'content/values/index.md'
+        file: 'content/values.md'
         fields:
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
@@ -83,6 +83,7 @@ collections:
     label: 'Programme pages'
     folder: 'content/policy/'
     create: true
+    path: '{{title}}'
     fields:
       - {label: 'Title', name: 'title', widget: 'string'}
       - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
@@ -97,6 +98,9 @@ collections:
   - name: 'people'
     label: 'Candidate profiles'
     folder: 'content/people/'
+    path: '{{name}}'
+    identifier_field: name
+    filter: {field: list_page, value: false}
     create: true
     fields:
       - {label: 'Name', name: 'name', widget: 'string'}

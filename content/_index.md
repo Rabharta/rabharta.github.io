@@ -1,4 +1,6 @@
 ---
+heading: Working for a just transition
+date: 2020-12-10 11:45:00
 title: Home
 bannerheading: |
   An Rabharta Glas
@@ -9,12 +11,9 @@ banneractions:
     link: /about/
   - action: Join us
     link: /join/
-heading: Working for a just transition
-image: /uploads/images/dramatic_landscape_full.jpg
+image: /uploads/dramatic_landscape_full.jpg
 actions:
   - action: Our Vision
     link: /vision/
-date: 2020-12-10 11:45:00
 ---
-
 ‘An Rabharta Glas – Green Left’ is a political party and civil campaign group in Ireland that seeks to use the legislative system to provide the framework for a Just Transition, while utilising direct action & civil campaigning to work towards making Ireland a more equal place to live.
