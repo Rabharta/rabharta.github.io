@@ -2,6 +2,10 @@
 title: About Us 
 subtitle: An Rabharta Glas-Green Left (ARG-GL) is an eco-socialist political party for the island of Ireland.
 banner: /uploads/images/catkins_normal.jpg
+aliases:
+  - /about-us
+  - /about-us.html
+  - /about.html
 date: 2020-12-12 14:56:00
 ---
 

@@ -1,0 +1,4 @@
+{
+    // required due to bugs in VSCode Golang addons
+    "editor.formatOnSave": false
+}

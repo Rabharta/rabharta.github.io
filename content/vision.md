@@ -5,6 +5,10 @@ banner: /uploads/images/hawthorn_normal.jpg
 actions:
     - action: Read our Programme Document
       link: /files/arg-gl_programme.pdf
+aliases:
+  - /our-vision
+  - /our-vision.html
+  - /vision.html
 date: 2020-12-10 11:45:00
 ---
 

@@ -16,19 +16,20 @@
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
 
-    {{ with resources.Get "scss/doc.scss" }}
-        {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
+    {{ with resources.Get "theme/scss/doc.scss" }}
+        {{ $opts := dict "transpiler" "libsass" "targetPath" "theme/css/style.css" }}
         {{ with . | toCSS $opts }}
             {{ if hugo.IsDevelopment }}
                 <link rel="stylesheet" href="{{ .RelPermalink }}" />
             {{ else }}
-                {{/*  {{ with . | minify | fingerprint }}  */}}
+                {{ $admin_preview_css:=.RelPermalink }}
+                {{ with . | minify | fingerprint }}
                     <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
-                {{/*  {{ end }}  */}}
+                {{ end }}
             {{ end }}
         {{ end }}
     {{ else}}
-        {{ resources.Get "static/scss/doc.scss" }}
+        {{ resources.Get "static/theme/scss/doc.scss" }}
     {{ end }}
 </head>
 

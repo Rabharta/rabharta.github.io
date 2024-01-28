@@ -15,7 +15,7 @@ const HomepagePreview = createClass({
 
         const bannerSection = h('section', {className: 'banner'}, [
             h('div', {className: 'image', dataPosition: 'right'},
-                h('img', {src: '/images/banner.jpg'})
+                h('img', {src: '/theme/images/banner.jpg'})
             ),
             h('div', {className: 'content'}, [
                 h('h1', {style: {whiteSpace: 'pre'}}, data.bannerheading),
@@ -55,5 +55,5 @@ const HomepagePreview = createClass({
     }
 });
 
-CMS.registerPreviewStyle('/css/style.css');
+CMS.registerPreviewStyle('/theme/css/style.css');
 CMS.registerPreviewTemplate('homepage', HomepagePreview);

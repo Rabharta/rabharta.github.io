@@ -5,6 +5,10 @@ banner: /uploads/images/dandelion_normal.jpg
 actions:
     - action: Read our party constitution
       link: /files/arg-gl_constitution.pdf
+aliases:
+  - /our-values
+  - /our-values.html
+  - /values.html
 date: 2020-12-12 14:56:00
 ---
 
