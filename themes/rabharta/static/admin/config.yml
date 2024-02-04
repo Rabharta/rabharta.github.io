@@ -4,7 +4,7 @@ backend:
   repo: rabharta/rabharta.github.io
   branch: main
   use_graphql: true
-  site_domain: rabhartagithubio.netlify.app
+  # site_domain: rabhartagithubio.netlify.app
 media_folder: static/uploads
 public_folder: /uploads
 logo_url: /theme/images/an-rabharta-glas-logo.svg
