@@ -1,7 +1,7 @@
 baseURL: 'https://rabharta.github.io'
 title: 'Rabharta'
 theme: 'rabharta'
-copyright: 'Copyright 2023 © An Rabharta Glass - Green Left. All rights reserved.'
+copyright: 'Copyright 2023 © An Rabharta Glas - Green Left. All rights reserved.'
 contentdir: 'content'
 layoutdir: 'layouts'
 publishdir: 'public'
