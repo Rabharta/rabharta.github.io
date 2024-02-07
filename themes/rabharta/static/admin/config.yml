@@ -124,7 +124,7 @@ collections:
     files:
       - label: 'Contact Page'
         name: 'contact-us'
-        file: 'content/contact-us.md'
+        file: 'content/contact-us/_index.md'
         fields:
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Content', name: 'body', widget: 'markdown'}

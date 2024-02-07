@@ -7,30 +7,7 @@
             {{.Content}}
         </header>
 
-        <div class="inner">
-            <div class="posts">
-                <article>
-                    <a href="/people/lorna-bogue/" class="image">
-                        <img src="/uploads/images/people/lornabogue_normal.jpg" alt="Cllr Lorna Bogue" />
-                    </a>
-                    <h3>Cllr Lorna Bogue</h3>
-                    <p>Lorna is a city councillor representing Cork City South-East on Cork City Council since 2019. She holds a masters in economic analysis and has previously worked in call centres for multinational companies and financial services - giving her a very clear insight into the precarious work conditions, poor pay and exploitative practices of these companies.</p>
-                    <ul class="actions special">
-                        <li><a href="/people/lorna-bogue/" class="button small next">Find out more</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <a href="/people/liam-sinclair/" class="image">
-                        <img src="/uploads/images/people/liam.jpg" alt="Cllr Liam Sinclair" />
-                    </a>
-                    <h3>Cllr Liam Sinclair</h3>
-                    <p>Liam is a county councillor representing Tallaght Central on South Dublin County Council. He was elected in 2019 after a campaign based on positive environmental action that puts working people at the centre, prioritises the needs of our most vulnerable and seeks for decision-making to be made at the lowest effective level.</p>
-                    <ul class="actions special">
-                        <li><a href="/people/liam-sinclair/" class="button small next">Find out more</a></li>
-                    </ul>
-                </article>
-            </div>
-        </div>
+        {{ partial "people-list" . }}
     </section>
 </div>
 

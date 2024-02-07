@@ -12,6 +12,7 @@ enableGitInfo: true
 metaDataFormat: 'yaml'
 pygmentsUseClasses: true
 pygmentCodeFences: true
+summaryLength: 40
 
 menus:
   main:

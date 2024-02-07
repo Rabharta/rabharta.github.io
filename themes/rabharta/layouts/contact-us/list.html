@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+<div id="wrapper">
+    <section class="main style1">
+        <div>
+            <section class="main style1">
+                <header class="small">
+                    <h1>{{ .Title }}</h1>
+                    <p>{{ .Params.subtitle }}</p>
+                </header>
+
+                {{ with .Params.banner }}
+                <div class="image filtered" data-position="center">
+                    <img src="{{ . }}" alt="{{ $.Title }}" />
+                </div>
+                {{ end }}
+            </section>
+        </div>
+        <div class="inner">
+            {{.Content}}
+            {{ with .Params.actions }}
+            <ul class="actions special">
+                {{ range $.Params.actions }}
+                    <li><a href="{{ .link }}" class="button next">{{ .action }}</a></li>
+                {{ end }}
+            </ul>
+            {{ end}}
+        </div>
+    </section>
+</div>
+
+{{ end }}
