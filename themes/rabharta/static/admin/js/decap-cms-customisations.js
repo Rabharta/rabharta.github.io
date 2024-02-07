@@ -1,7 +1,16 @@
-const pageWrap = (contents) => {
-    return h('div', {id: 'container'},
-        h('div', {id: 'wrapper'}, contents)
-    )
+const windowTitleStyle = `${
+    navigator.platform.includes('Mac')?'macos':'windows'
+} ${
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''
+}`;
+
+const pageWrap = (title, contents) => {
+    return h('div', {}, [
+        h('div', {className: `ostitlebar ${windowTitleStyle}`}, `An Rabharta Glas - Green Left | ${title}`),
+        h('div', {id: 'container'},
+            h('div', {id: 'wrapper'}, contents)
+        )
+    ])
 }
 
 const SinglePagePreview = createClass({
@@ -30,7 +39,7 @@ const SinglePagePreview = createClass({
             ])
         ])
 
-        return pageWrap([
+        return pageWrap(data.title, [
             contentSection
         ])
     }
@@ -75,7 +84,7 @@ const HomepagePreview = createClass({
                     )) : null
             ]);
 
-        return pageWrap([
+        return pageWrap(data.title, [
             bannerSection,
             contentSection
         ])
