@@ -8,6 +8,7 @@ backend:
 media_folder: static/uploads
 public_folder: /uploads
 logo_url: /theme/images/an-rabharta-glas-logo.svg
+publish_mode: editorial_workflow
 
 collections:
   - name: 'pages'
