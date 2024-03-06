@@ -120,6 +120,15 @@ collections:
           - {label: 'Label', name: 'action', widget: 'string'}
           # TODO: Make a custom relation widget to choose from all content
           - {label: 'Link', name: 'link', widget: 'string'}
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'content/blog/'
+    create: true
+    fields:
+      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Publish Date', name: 'date', widget: 'datetime'}
+      - {label: 'Featured Image', name: 'thumbnail', widget: 'image'}
+      - {label: 'Body', name: 'body', widget: 'markdown'}
   - name: 'contact-pages'
     label: 'Contact Pages'
     files:
