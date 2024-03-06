@@ -47,8 +47,8 @@ menus:
     name: 'Climate'
     url: '/policy/climate'
     weight: 1
-  - name: 'Members'
-    url: '/member'
+  - name: 'Blog'
+    url: '/blog'
     weight: 6
 
 languages:
