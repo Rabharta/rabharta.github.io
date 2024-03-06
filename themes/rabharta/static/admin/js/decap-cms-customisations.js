@@ -97,3 +97,4 @@ CMS.registerPreviewTemplate('about', SinglePagePreview);
 CMS.registerPreviewTemplate('people', SinglePagePreview);
 CMS.registerPreviewTemplate('values', SinglePagePreview);
 CMS.registerPreviewTemplate('vision', SinglePagePreview);
+CMS.registerPreviewTemplate('blog', SinglePagePreview);
