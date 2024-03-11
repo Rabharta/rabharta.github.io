@@ -87,8 +87,8 @@ collections:
     create: true
     path: '{{title}}'
     # Note: Decap bug/peculiarity: need to specify media_folder & public_folder for each "folder" type collection (not required for "file" collections)
-    media_folder: static/uploads
-    public_folder: /uploads
+    media_folder: '{{media_folder}}'
+    public_folder: '{{public_folder}}'
     fields:
       - {label: 'Title', name: 'title', widget: 'string'}
       - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
@@ -105,8 +105,8 @@ collections:
     folder: 'content/people/'
     path: '{{name}}'
     # Note: Decap bug/peculiarity: need to specify media_folder & public_folder for each "folder" type collection (not required for "file" collections)
-    media_folder: static/uploads
-    public_folder: /uploads
+    media_folder: '{{media_folder}}'
+    public_folder: '{{public_folder}}'
     identifier_field: name
     filter: {field: list_page, value: false}
     create: true
@@ -131,8 +131,8 @@ collections:
     label: 'Blog Post'
     folder: 'content/blog/'
     # Note: Decap bug/peculiarity: need to specify media_folder & public_folder for each "folder" type collection (not required for "file" collections)
-    media_folder: static/uploads
-    public_folder: /uploads
+    media_folder: '{{media_folder}}'
+    public_folder: '{{public_folder}}'
     create: true
     fields:
       - {label: 'Title', name: 'title', widget: 'string'}
