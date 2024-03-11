@@ -111,6 +111,7 @@ collections:
     filter: {field: list_page, value: false}
     create: true
     fields:
+      - {label: 'Title', name: 'title', widget: 'string'}
       - {label: 'Name', name: 'name', widget: 'string'}
       - label: 'Constituency'
         name: 'constituency'
@@ -127,7 +128,7 @@ collections:
           # TODO: Make a custom relation widget to choose from all content
           - {label: 'Link', name: 'link', widget: 'string'}
   - name: 'blog'
-    label: 'Post'
+    label: 'Blog Post'
     folder: 'content/blog/'
     # Note: Decap bug/peculiarity: need to specify media_folder & public_folder for each "folder" type collection (not required for "file" collections)
     media_folder: static/uploads
