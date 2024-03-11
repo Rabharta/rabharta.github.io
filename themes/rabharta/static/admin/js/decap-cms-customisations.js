@@ -4,45 +4,67 @@ const windowTitleStyle = `${
     window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''
 }`;
 
-const pageWrap = (title, contents) => {
-    return h('div', {}, [
-        h('div', {className: `ostitlebar ${windowTitleStyle}`}, `An Rabharta Glas - Green Left | ${title}`),
-        h('div', {id: 'container'},
-            h('div', {id: 'wrapper'}, contents)
-        )
+const makePageWrap = (title, contents) => h('div', {}, [
+    h('div', {className: `ostitlebar ${windowTitleStyle}`}, `An Rabharta Glas - Green Left | ${title}`),
+    h('div', {id: 'container'},
+        h('div', {id: 'wrapper'}, contents)
+    )
+]);
+
+const makeContentSection = (data, body) => h('section', {className: 'main style1'}, [
+    h('div', {}, h('section', {className: 'main style1'}, [
+        h('header', {className: 'small'}, [
+            h('h1', {}, data.title),
+            h('p', {}, data.subtitle)
+        ]),
+        data.banner ? h('div', {className: 'image filtered', dataPosition: 'center'},
+            h('img', {src: data.banner, alt: data.title})
+        ) : null
+    ])),
+    h('div', {className: 'inner'}, [
+        body,
+        data.actions ? 
+            h('div', {className: 'inner'}, h('ul', {className: 'actions special'},
+                data.actions.map(item => h('li', {},
+                    h('a', {className: 'button next', href: item.link}, item.action)
+                ))
+            )) : null
     ])
-}
+]);
 
 const SinglePagePreview = createClass({
     render() {
         const data = this.props.entry.getIn(['data']).toJS();
         const body = this.props.widgetFor('body');
 
-        const contentSection = h('section', {className: 'main style1'}, [
-            h('div', {}, h('section', {className: 'main style1'}, [
-                h('header', {className: 'small'}, [
-                    h('h1', {}, data.title),
-                    h('p', {}, data.subtitle)
-                ]),
-                data.banner ? h('div', {className: 'image filtered', dataPosition: 'center'},
-                    h('img', {src: data.banner, alt: data.title})
-                ) : null
-            ])),
-            h('div', {className: 'inner'}, [
-                body,
-                data.actions ? 
-                    h('div', {className: 'inner'}, h('ul', {className: 'actions special'},
-                        data.actions.map(item => h('li', {},
-                            h('a', {className: 'button next', href: item.link}, item.action)
-                        ))
-                    )) : null
-            ])
-        ])
-
-        return pageWrap(data.title, [
+        const contentSection = makeContentSection(data, body);
+        return makePageWrap(data.title, [
             contentSection
         ])
     }
+});
+const PeoplePagePreview = createClass({
+  render() {
+      const data = this.props.entry.getIn(['data']).toJS();
+      const body = this.props.widgetFor('body');
+
+      const contentSection = makeContentSection(data, body);
+      return makePageWrap(data.title, [
+          contentSection
+      ])
+  }
+});
+const BlogPostPreview = createClass({
+  render() {
+      const data = this.props.entry.getIn(['data']).toJS();
+      const body = this.props.widgetFor('body');
+
+      const contentSection = makeContentSection(data, body);
+      return makePageWrap(data.title, [
+          h('em', {className: 'blogpost-publish-date'}, data.date),
+          contentSection
+      ])
+  }
 });
 const HomepagePreview = createClass({
     render() {
@@ -64,7 +86,7 @@ const HomepagePreview = createClass({
                     ) : null
             ])
         ]);
-        const contentSection = h('section', {className: 'main style1'}, [
+        const homepageContentSection = h('section', {className: 'main style1'}, [
             h('div', {},
                 h('section', {className: 'main style1'}, [
                     h('header', {className: 'small'}, [
@@ -84,9 +106,9 @@ const HomepagePreview = createClass({
                     )) : null
             ]);
 
-        return pageWrap(data.title, [
+        return makePageWrap(data.title, [
             bannerSection,
-            contentSection
+            homepageContentSection
         ])
     }
 });
@@ -94,7 +116,7 @@ const HomepagePreview = createClass({
 CMS.registerPreviewStyle('/admin/css/preview.css');
 CMS.registerPreviewTemplate('homepage', HomepagePreview);
 CMS.registerPreviewTemplate('about', SinglePagePreview);
-CMS.registerPreviewTemplate('people', SinglePagePreview);
+CMS.registerPreviewTemplate('people', PeoplePagePreview);
 CMS.registerPreviewTemplate('values', SinglePagePreview);
 CMS.registerPreviewTemplate('vision', SinglePagePreview);
-CMS.registerPreviewTemplate('blog', SinglePagePreview);
+CMS.registerPreviewTemplate('blog', BlogPostPreview);
