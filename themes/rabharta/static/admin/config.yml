@@ -29,7 +29,7 @@ collections:
               # TODO: Make a custom relation widget to choose from all content
               - {label: 'Link', name: 'link', widget: 'string'}
           - {label: 'Content Heading', name: 'heading', widget: 'string'}
-          - {label: 'Content Image', name: 'image', widget: 'image'}
+          - {label: 'Content Image', name: 'image', widget: 'image', choose_url: false}
           - {label: 'Content', name: 'body', widget: 'markdown'}
           - label: 'Content Actions'
             name: 'actions'
@@ -86,6 +86,9 @@ collections:
     folder: 'content/policy/'
     create: true
     path: '{{title}}'
+    # Note: Decap bug/peculiarity: need to specify media_folder & public_folder for each "folder" type collection (not required for "file" collections)
+    media_folder: static/uploads
+    public_folder: /uploads
     fields:
       - {label: 'Title', name: 'title', widget: 'string'}
       - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
@@ -101,6 +104,9 @@ collections:
     label: 'Candidate profiles'
     folder: 'content/people/'
     path: '{{name}}'
+    # Note: Decap bug/peculiarity: need to specify media_folder & public_folder for each "folder" type collection (not required for "file" collections)
+    media_folder: static/uploads
+    public_folder: /uploads
     identifier_field: name
     filter: {field: list_page, value: false}
     create: true
@@ -123,11 +129,14 @@ collections:
   - name: 'blog'
     label: 'Post'
     folder: 'content/blog/'
+    # Note: Decap bug/peculiarity: need to specify media_folder & public_folder for each "folder" type collection (not required for "file" collections)
+    media_folder: static/uploads
+    public_folder: /uploads
     create: true
     fields:
       - {label: 'Title', name: 'title', widget: 'string'}
       - {label: 'Publish Date', name: 'date', widget: 'datetime'}
-      - {label: 'Featured Image', name: 'thumbnail', widget: 'image'}
+      - {label: 'Featured Image', name: 'thumbnail', widget: 'image', choose_url: false}
       - {label: 'Body', name: 'body', widget: 'markdown'}
   - name: 'contact-pages'
     label: 'Contact Pages'
