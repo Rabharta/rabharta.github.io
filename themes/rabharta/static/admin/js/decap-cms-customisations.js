@@ -4,31 +4,52 @@ const windowTitleStyle = `${
   window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''
 }`;
 
-const makePageWrap = (title, contents) => h('div', {}, [
+const makePageWrap = (title, hero, contents) => h('div', {}, [
   h('div', {className: `ostitlebar ${windowTitleStyle}`}, `An Rabharta Glas - Green Left | ${title}`),
   h('div', {id: 'container'},
-      h('div', {id: 'wrapper'}, contents)
+    h('div', {id: 'wrapper'}, [
+      hero || null,
+      h('section', {className: 'main style1'}, [
+        contents
+      ])
+    ])
   )
 ]);
 
-const makeContentSection = (data, body) => h('section', {className: 'main style1'}, [
-  h('div', {}, h('section', {className: 'main style1'}, [
-      h('header', {className: 'small'}, [
-          h('h1', {}, data.title),
-          h('p', {}, data.subtitle)
-      ]),
-      data.banner ? h('div', {className: 'image filtered', dataPosition: 'center'},
-          h('img', {src: data.banner, alt: data.title})
-      ) : null
-  ])),
-  h('div', {className: 'inner'}, [
-      body,
-      data.actions ? 
-          h('div', {className: 'inner'}, h('ul', {className: 'actions special'},
-              data.actions.map(item => h('li', {},
+const makeActions = (actions) => actions ? h('div', {className: 'inner'},
+  h('ul', {className: 'actions special'}, actions.map(item => h('li', {},
+    h('a', {className: 'button next', href: item.link}, item.action)
+  ))
+)) : null
+
+const makeContent = (body, actions) => h('div', {className: 'inner'}, [
+  body,
+  makeActions(actions)
+]);
+
+const makeContentBanner = (title, body, image) => h('div', {}, h('section', {className: 'main style1'}, [
+  h('header', {className: 'small'}, [
+      h('h1', {}, title),
+      h('p', {}, body)
+  ]),
+  image ? h('div', {className: 'image filtered', dataPosition: 'center'},
+      h('img', {src: image, alt: title})
+  ) : null
+]));
+
+const makeHeroBanner = (title, body, image, actions) => h('section', {className: 'banner'}, [
+  h('div', {className: 'image', dataPosition: 'right'},
+      h('img', {src: image, alt: title})
+  ),
+  h('div', {className: 'content'}, [
+      h('h1', {style: {whiteSpace: 'pre'}}, title),
+      h('h3', {className: 'tagline'}, body),
+      actions ? 
+          h('ul', {className: 'actions special'},
+              actions.map(item => h('li', {},
                   h('a', {className: 'button next', href: item.link}, item.action)
               ))
-          )) : null
+          ) : null
   ])
 ]);
 
@@ -37,9 +58,10 @@ const SinglePagePreview = createClass({
       const data = this.props.entry.getIn(['data']).toJS();
       const body = this.props.widgetFor('body');
 
-      return makePageWrap(data.title, [
-          makeContentSection(data, body)
-      ])
+      return makePageWrap(data.title, null, [
+        makeContentBanner(data.title, data.subtitle, data.banner),
+        makeContent(body, data.actions)
+      ]);
   }
 });
 const PeoplePagePreview = createClass({
@@ -47,8 +69,9 @@ const PeoplePagePreview = createClass({
     const data = this.props.entry.getIn(['data']).toJS();
     const body = this.props.widgetFor('body');
 
-    return makePageWrap(data.title, [
-        makeContentSection(data, body)
+    return makePageWrap(data.title, null, [
+      makeContentBanner(data.name, data.constituency, data.banner),
+      makeContent(body, data.actions)
     ]);
   }
 });
@@ -58,9 +81,9 @@ const BlogPostPreview = createClass({
     const body = this.props.widgetFor('body');
 
     const date = h('em', {className: 'blogpost-publish-date'}, data.date.toString());
-    const contentSection = makeContentSection(data, [body, date]);
-    return makePageWrap(data.title, [
-        contentSection
+    return makePageWrap(data.title, null, [
+      makeContentBanner(data.title, data.subtitle, data.banner),
+      makeContent(body, data.actions)
     ]);
   }
 });
@@ -69,45 +92,17 @@ const HomepagePreview = createClass({
       const data = this.props.entry.getIn(['data']).toJS();
       const body = this.props.widgetFor('body');
 
-      const bannerSection = h('section', {className: 'banner'}, [
-          h('div', {className: 'image', dataPosition: 'right'},
-              h('img', {src: '/theme/images/banner.jpg'})
-          ),
-          h('div', {className: 'content'}, [
-              h('h1', {style: {whiteSpace: 'pre'}}, data.bannerheading),
-              h('h3', {className: 'tagline'}, data.bannersubheading),
-              data.banneractions ? 
-                  h('ul', {className: 'actions special'},
-                      data.banneractions.map(item => h('li', {},
-                          h('a', {className: 'button next', href: item.link}, item.action)
-                      ))
-                  ) : null
-          ])
+      const homepageBanner = makeHeroBanner(
+        data.bannerheading,
+        data.bannersubheading,
+        '/theme/images/banner.jpg',
+        data.banneractions
+      );
+      
+      return makePageWrap(data.title, homepageBanner, [
+        makeContentBanner(data.heading, body, data.image),
+        makeActions(data.actions)
       ]);
-      const homepageContentSection = h('section', {className: 'main style1'}, [
-          h('div', {},
-              h('section', {className: 'main style1'}, [
-                  h('header', {className: 'small'}, [
-                      h('h1', {}, data.heading),
-                      body
-                  ]),
-                  data.image ? h('div', {class: 'image', dataPosition: 'center'},
-                      h('img', {src: data.image, alt: data.heading})
-                  ) : null
-              ])
-          ),
-          data.actions ? 
-                  h('div', {className: 'inner'}, h('ul', {className: 'actions special'},
-                      data.actions.map(item => h('li', {},
-                          h('a', {className: 'button next', href: item.link}, item.action)
-                      ))
-                  )) : null
-          ]);
-
-      return makePageWrap(data.title, [
-          bannerSection,
-          homepageContentSection
-      ])
   }
 });
 
