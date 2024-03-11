@@ -56,11 +56,9 @@ const BlogPostPreview = createClass({
   render() {
     const data = this.props.entry.getIn(['data']).toJS();
     const body = this.props.widgetFor('body');
-    const publishDate = data.date;
-    console.log({ publishDate, data });
 
     const contentSection = makeContentSection(data, body);
-    const date = h('em', {className: 'blogpost-publish-date'}, publishDate || 'date here') || 'no date';
+    const date = h('em', {className: 'blogpost-publish-date'}, data.date.toString());
     return makePageWrap(data.title, [
         date,
         contentSection
