@@ -1,8 +1,8 @@
 ---
+list_page: false
 name: Robin Cafolla
 constituency: Dublin
-photo: candidate_headshot_img_2485.jpg
-list_page: false
+photo: /uploads/robin_headshot.png
 ---
 
 Robin Cafolla is a software engineer and climate activist, and is our Dublin candidate for the European Parliament.
