@@ -1,6 +1,6 @@
 ---
 list_page: false
-name: Dr Lorna Bogue
+name: Dr Laura Keyes
 constituency: Limerick
 photo: /uploads/whatsapp-image-2024-03-21-at-17.55.07.jpeg
 actions:
