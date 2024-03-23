@@ -18,13 +18,7 @@
         </div>
         <div class="inner">
             {{.Content}}
-            {{ with .Params.actions }}
-            <ul class="actions special">
-                {{ range $.Params.actions }}
-                    <li><a href="{{ .link }}" class="button next">{{ .action }}</a></li>
-                {{ end }}
-            </ul>
-            {{ end}}
+            {{ partial "actions" .Params.actions }}
         </div>
     </section>
 </div>

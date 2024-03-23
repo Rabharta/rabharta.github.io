@@ -1,5 +1,5 @@
 ---
-name: Cllr Lorna Bogue
+title: Cllr Lorna Bogue
 constituency: Cork City South East
 photo: /uploads/lornabogue_normal.jpg
 date: 2021-06-02 19:09:00

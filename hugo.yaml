@@ -1,7 +1,7 @@
 baseURL: 'https://rabharta.github.io'
 title: 'Rabharta'
 theme: 'rabharta'
-copyright: 'Copyright 2023 © An Rabharta Glas - Green Left. All rights reserved.'
+copyright: 'Copyright 2024 © Rabharta. All rights reserved.'
 contentdir: 'content'
 layoutdir: 'layouts'
 publishdir: 'public'
@@ -20,35 +20,35 @@ menus:
     url: '/join'
     weight: 1
   - name: 'About Us'
-    url: '/about'
+    pageRef: '/about'
     weight: 2
   - name: 'People'
-    url: '/people'
+    pageRef: '/people'
     weight: 3
-  - parent: 'People'
-    name: 'Liam Sinclair'
-    url: '/people/liam-sinclair'
-    weight: 1
-  - parent: 'People'
-    name: 'Lorna Bogue'
-    url: '/people/lorna-bogue'
-    weight: 2
+  # - parent: 'People'
+  #   name: 'Liam Sinclair'
+  #   url: '/people/liam-sinclair'
+  #   weight: 1
+  # - parent: 'People'
+  #   name: 'Lorna Bogue'
+  #   url: '/people/lorna-bogue'
+  #   weight: 2
   - name: 'Our Values'
-    url: '/values'
+    pageRef: '/values'
     weight: 4
   - name: 'Our Vision'
-    url: '/vision'
+    pageRef: '/vision'
     weight: 5
-  - parent: 'Our Vision'
-    name: 'Housing'
-    url: '/policy/housing'
-    weight: 1
-  - parent: 'Our Vision'
-    name: 'Climate'
-    url: '/policy/climate'
-    weight: 1
+  # - parent: 'Our Vision'
+  #   name: 'Housing'
+  #   url: '/policy/housing'
+  #   weight: 1
+  # - parent: 'Our Vision'
+  #   name: 'Climate'
+  #   url: '/policy/climate'
+  #   weight: 1
   - name: 'Blog'
-    url: '/blog'
+    pageRef: '/blog'
     weight: 6
 
 languages:

@@ -1,0 +1,7 @@
+{{ with . }}
+<ul class="actions special">
+    {{ range $ }}
+        <li><a href="{{ .link }}" class="button next">{{ .action }}</a></li>
+    {{ end }}
+</ul>
+{{ end }}

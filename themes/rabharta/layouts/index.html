@@ -7,13 +7,7 @@
       <div class="content">
         <h1 style="white-space:pre">{{ .Params.bannerheading }}</h1>
         <h3 class="tagline">{{ .Params.bannersubheading }}</h3>
-        {{ with .Params.banneractions }}
-        <ul class="actions special">
-          {{ range $.Params.banneractions }}
-          <li><a href="{{ .link }}" class="button next">{{ .action }}</a></li>
-          {{ end }}
-        </ul>
-        {{ end }}
+        {{ partial "actions" .Params.banneractions }}
       </div>
     </section>
     <section class="main style1">
@@ -32,16 +26,11 @@
 
         </section>
       </div>
-      {{ with .Params.actions }}
       <div class="inner">
-        <ul class="actions special">
-          {{ range $.Params.actions }}
-          <li><a href="{{ .link }}" class="button next">{{ .action }}</a></li>
-          {{ end }}
-        </ul>
+        {{ partial "actions" .Params.actions }}
       </div>
-      {{ end }}
     </section>
+    {{- /*
     {{ range .Pages }}
         {{ if strings.Contains .File.Path "people/_index.md" }}
         <section class="main style1">
@@ -52,6 +41,7 @@
           {{ partial "people-list" . }}
         {{ end }}
     {{ end }}
+    */ -}}
   </div>
 
 {{ end }}

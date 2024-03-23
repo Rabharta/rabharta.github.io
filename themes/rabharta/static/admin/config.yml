@@ -18,6 +18,7 @@ collections:
         name: 'homepage'
         file: 'content/_index.md'
         fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Banner Heading', name: 'bannerheading', widget: 'text'}
           - {label: 'Banner Subheading', name: 'bannersubheading', widget: 'string'}
@@ -42,6 +43,7 @@ collections:
         name: 'about'
         file: 'content/about.md'
         fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
           - {label: 'Content', name: 'body', widget: 'markdown'}
@@ -49,12 +51,14 @@ collections:
         name: 'people'
         file: 'content/people/_index.md'
         fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Content', name: 'body', widget: 'markdown'}
       - label: 'Values page'
         name: 'values'
         file: 'content/values.md'
         fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
           - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
@@ -70,6 +74,7 @@ collections:
         name: 'vision'
         file: 'content/vision/index.md'
         fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
           - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
@@ -90,6 +95,7 @@ collections:
     media_folder: '{{media_folder}}'
     public_folder: '{{public_folder}}'
     fields:
+      - {label: 'Browser tab title', name: 'meta_title', required: false}
       - {label: 'Title', name: 'title', widget: 'string'}
       - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
       - {label: 'Content', name: 'body', widget: 'markdown'}
@@ -114,8 +120,8 @@ collections:
     fields:
       # Part of above list_page hack
       - {label: 'List page hack', name: 'list_page', widget: 'hidden', default: false}
-      - {label: 'Title', name: 'title', widget: 'string', required: false}
-      - {label: 'Name', name: 'name', widget: 'string'}
+      - {label: 'Browser tab title', name: 'meta_title', required: false}
+      - {label: 'Candidate name', name: 'title', widget: 'string'}
       - label: 'Constituency'
         name: 'constituency'
         widget: 'string'
@@ -136,6 +142,7 @@ collections:
     public_folder: '{{public_folder}}'
     create: true
     fields:
+      - {label: 'Browser tab title', name: 'meta_title', required: false}
       - {label: 'Title', name: 'title', widget: 'string'}
       - {label: 'Publish Date', name: 'date', widget: 'datetime'}
       - {label: 'Featured Image', name: 'thumbnail', widget: 'image', choose_url: false}
@@ -147,23 +154,27 @@ collections:
         name: 'contact-us'
         file: 'content/contact-us/_index.md'
         fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Content', name: 'body', widget: 'markdown'}
       - label: 'Child Protection Officer'
         name: 'child-protection-officer'
         file: 'content/contact-us/child-protection-officer.md'
         fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Content', name: 'body', widget: 'markdown'}
       - label: 'Contact Form Success Page'
         name: 'contact-us-sent'
         file: 'content/contact-us/sent.md'
         fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Content', name: 'body', widget: 'markdown'}
       - label: 'Contact Form Error Page'
         name: 'contact-us-failure'
         file: 'content/contact-us/failure.md'
         fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}
           - {label: 'Content', name: 'body', widget: 'markdown'}

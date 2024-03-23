@@ -4,8 +4,8 @@ const windowTitleStyle = `${
   window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''
 }`;
 
-const makePageWrap = (title, hero, contents) => h('div', {}, [
-  h('div', {className: `ostitlebar ${windowTitleStyle}`}, `An Rabharta Glas - Green Left | ${title}`),
+const makePageWrap = (data, hero, contents) => h('div', {}, [
+  h('div', {className: `ostitlebar ${windowTitleStyle}`}, `Rabharta | ${data.meta_title || data.title}`),
   h('div', {id: 'container'},
     h('div', {id: 'wrapper'}, [
       hero || null,
@@ -58,7 +58,7 @@ const SinglePagePreview = createClass({
       const data = this.props.entry.getIn(['data']).toJS();
       const body = this.props.widgetFor('body');
 
-      return makePageWrap(data.title, null, [
+      return makePageWrap(data, null, [
         makeContentBanner(data.title, data.subtitle, data.banner),
         makeContent(body, data.actions)
       ]);
@@ -69,7 +69,7 @@ const PeoplePagePreview = createClass({
     const data = this.props.entry.getIn(['data']).toJS();
     const body = this.props.widgetFor('body');
 
-    return makePageWrap(data.title, null, [
+    return makePageWrap(data, null, [
       makeContentBanner(data.name, data.constituency, data.banner),
       makeContent(body, data.actions)
     ]);
@@ -81,7 +81,7 @@ const BlogPostPreview = createClass({
     const body = this.props.widgetFor('body');
 
     const date = h('em', {className: 'blogpost-publish-date'}, data.date.toString());
-    return makePageWrap(data.title, null, [
+    return makePageWrap(data, null, [
       makeContentBanner(data.title, data.subtitle, data.banner),
       makeContent(body, data.actions)
     ]);
@@ -99,7 +99,7 @@ const HomepagePreview = createClass({
         data.banneractions
       );
       
-      return makePageWrap(data.title, homepageBanner, [
+      return makePageWrap(data, homepageBanner, [
         makeContentBanner(data.heading, body, data.image),
         makeActions(data.actions)
       ]);

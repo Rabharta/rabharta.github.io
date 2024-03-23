@@ -1,6 +1,6 @@
 ---
 list_page: false
-name: Robin Cafolla
+title: Robin Cafolla
 constituency: Dublin
 photo: /uploads/robin_headshot.png
 ---

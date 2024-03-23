@@ -3,7 +3,7 @@
 <header id="header">
     <div class="headerWrapper">
         <div class="logo">
-            <a class="site-title" href="{{ relLangURL "/" }}">
+            <a class="site-title" href='{{ relLangURL "/" }}'>
                 <img src="/theme/images/an-rabharta-glas-logo.svg" alt="Site Logo" title="{{ .Site.Title }}" />
             </a>
         </div>
@@ -12,19 +12,36 @@
             <ul class="main-nav">
                 {{ range .Site.Menus.main }}
                 <li>
-                    {{ if .Children }}
-                        <a class="icon solid fa-angle-down" href="{{ .URL }}">{{ .Name }}</a>
-                    {{ else }}
-                        <a href="{{ .URL }}">{{ .Name }}</a>
-                    {{ end }}
+                    {{ $hasHardcodedChildren := .HasChildren }}
+                    {{ $isIndexPageWithChildren := and .Page .Page.Pages }}
+                    {{ $hasChildren := or $hasHardcodedChildren $isIndexPageWithChildren }}
 
-                    {{ with .Children }}
-                    <ul>
-                        {{ range . }}
-                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                        {{ end}}
-                    </ul>
-                    {{ end}}
+                    {{ if not $hasChildren }}
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ else }}
+
+                        <a class="icon solid fa-angle-down" href="{{ .URL }}">{{ .Name }}</a>
+
+                        {{ if $hasHardcodedChildren }}
+                            {{/* Render hardcoded children of index page */}}
+                            {{ with .Children }}
+                            <ul>
+                                {{ range . }}
+                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                {{ end}}
+                            </ul>
+                            {{ end }}
+                        {{ else if $isIndexPageWithChildren}}
+                            {{/* Render children of index page */}}
+                            {{ with .Page.Pages }}
+                            <ul>
+                                {{ range . }}
+                                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                                {{ end }}
+                            </ul>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
                 </li>
                 {{ end }}
             </ul>
