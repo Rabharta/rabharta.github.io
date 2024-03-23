@@ -1,33 +1,53 @@
 {{ define "main" }}
 
-<section id="list">
+<div id="wrapper">
+    <section class="main style1">
+        <header class="small">
+            {{ if eq .Data.Singular "tag" }}
+            <h2>#{{ .Title | lower }}</h2>
+            {{ else }}
+            <h2>{{ .Title }}</h2>
+            {{ end }}
 
-    {{ $baseurl := .Site.BaseURL }}
+            {{.Content}}
+        </header>
 
-    {{ if eq .Data.Singular "tag" }}
-    <h2>#{{ .Title | lower }}</h2>
-    {{ else }}
-    <h2>{{ .Title }}</h2>
-    {{ end }}
+        {{/*  {{ range (.Paginate (.Data.Pages.GroupByDate "2006")).PageGroups }}
 
-    {{ .Content }}
-
-    {{ range (.Paginate (.Data.Pages.GroupByDate "2006")).PageGroups }}
-
-    <h3>{{ .Key }}</h3>
-    <ul>
-        {{ range .Pages }}
-        <li>
-            <a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{end}}{{ .Title | markdownify }}</a>
-            <time class="date-meta">{{ .Date.Format "Jan 2" }}</time>
-        </li>
-        {{ end }}
-    </ul>
-
-    {{ end }}
-
-</section>
-
-{{ template "_internal/pagination.html" . }}
+        <h3>{{ .Key }}</h3>
+        <ul>
+            {{ range .Pages }}
+            <li>
+                <a href="{{ .Permalink }}">{{ if .Draft }}{{ T "draft" }}: {{end}}{{ .Title | markdownify }}</a>
+                <time class="date-meta">{{ .Date.Format "Jan 2" }}</time>
+            </li>
+            {{ end }}
+        </ul>
+    
+        {{ end }}  */}}
+        
+        <div class="inner">
+            {{ range (.Paginate (.Data.Pages.GroupByDate "2006")).PageGroups }}
+            <h3>{{ .Key }}</h3>
+            <div class="posts">
+                {{/*  {{ range .Paginator.Pages }}  */}}
+                {{ range .Pages }}
+                <article>
+                    <a href="{{ .RelPermalink }}" class="image">
+                        <img src="{{ .Params.thumbnail }}" alt="{{ .Params.name }}" />
+                    </a>
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Summary }}</p>
+                    <ul class="actions special ">
+                        <li><a href="{{ .RelPermalink }}" class="button small next">Keep reading</a></li>
+                    </ul>
+                </article>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        
+    </section>
+</div>
 
 {{ end }}

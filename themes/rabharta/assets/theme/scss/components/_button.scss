@@ -42,6 +42,17 @@
 			}
 		}
 
+		&.prev {
+			@include icon(false, solid, after);
+
+			&:after {
+				content: '\f30a';
+				float: left;
+				line-height: inherit;
+				margin-right: 0.75rem;
+			}
+		}
+
 		&.next {
 			@include icon(false, solid);
 
@@ -63,6 +74,11 @@
 			line-height: calc(2.625rem - 1px);
 			padding: 0 1.5rem;
 
+			&.prev {
+				&:after {
+					margin-right: 0.5rem;
+				}
+			}
 			&.next {
 				&:before {
 					margin-left: 0.5rem;
@@ -120,7 +136,7 @@
 				}
 			}
 
-			&.next {
+			&.prev, &.next {
 				&:before {
 					color: $border;
 				}

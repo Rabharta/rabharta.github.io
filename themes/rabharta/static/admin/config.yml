@@ -136,7 +136,7 @@ collections:
           - {label: 'Link', name: 'link', widget: 'string'}
   - name: 'blog'
     label: 'Blog Post'
-    folder: 'content/blog/'
+    folder: 'content/posts/'
     # Note: Decap bug/peculiarity: need to specify media_folder & public_folder for each "folder" type collection (not required for "file" collections)
     media_folder: '{{media_folder}}'
     public_folder: '{{public_folder}}'

@@ -1,17 +1,41 @@
 {{ define "main" }}
 
-<article>
+<div id="wrapper">
+    <section class="main style1">
+        <div>
+            <section class="main style1">
+                <header class="small">
+                    <h1>{{ .Title }}</h1>
+                    <p><time
+                        class="post-date"
+                        datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
+                        {{ .Date.Format "January 2, 2006" }}
+                    </time></p>
+                    <p><em>{{ printf "Estimated reading time: %d minutes" .ReadingTime }}</em></p>
+                </header>
 
-    <h1>{{ .Title }}</h1>
+                {{ with .Params.thumbnail }}
+                <div class="image filtered" data-position="center">
+                    <img src="{{ . }}" alt="{{ $.Title }}" />
+                </div>
+                {{ end }}
+            </section>
+        </div>
+        <div class="inner">
+            {{ .Content }}
 
-    {{ if or (not (isset .Params "meta")) (eq .Params "meta" true) }}
-    {{ partial "aside" . }}
-    {{ end }}
-
-    {{ .Content }}
-
-</article>
-
-{{ partial "single_footer" . }}
+            {{ if or .PrevInSection .NextInSection }}
+            <ul class="actions">
+                {{ with .PrevInSection }}
+                    <li><a class="button prev" href="{{.Permalink}}">{{ .Title }}</a></li>
+                {{ end }}
+                {{ with .NextInSection }}
+                    <li><a class="button next" href="{{.Permalink}}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </div>
+    </section>
+</div>
 
 {{ end }}
