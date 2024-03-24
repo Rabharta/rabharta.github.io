@@ -1,6 +1,6 @@
 ---
 title: Cllr Lorna Bogue
-constituency: Cork City South East
+constituency: South (European Parliament)
 photo: /uploads/lornabogue_normal.jpg
 date: 2021-06-02 19:09:00
 aliases:

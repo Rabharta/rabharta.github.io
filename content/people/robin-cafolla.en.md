@@ -1,7 +1,7 @@
 ---
 list_page: false
 title: Robin Cafolla
-constituency: Dublin
+constituency: Dublin (European Parliament)
 photo: /uploads/robin_headshot.png
 ---
 

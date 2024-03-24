@@ -1,7 +1,7 @@
 ---
 list_page: false
 title: Robin Cafolla
-constituency: Dublin
+constituency: Baila Átha Cliath (Parlaimint na hEorpa)
 photo: /uploads/robin_headshot.png
 ---
 

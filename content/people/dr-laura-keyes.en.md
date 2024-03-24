@@ -1,7 +1,7 @@
 ---
 list_page: false
 title: Dr Laura Keyes
-constituency: Limerick
+constituency: Limerick (Mayor)
 photo: /uploads/whatsapp-image-2024-03-21-at-17.55.07.jpeg
 actions:
   - link: /uploads/preliminary-mayoral-programme-21.3.24.pdf
