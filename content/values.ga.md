@@ -4,7 +4,7 @@ subtitle: What we think is important to how we work
 banner: /uploads/dandelion_normal.jpg
 actions:
     - action: Read our party constitution
-      link: /files/arg-gl_constitution.pdf
+      link: /uploads/arg-gl_constitution.pdf
 aliases:
   - /our-values
   - /our-values.html

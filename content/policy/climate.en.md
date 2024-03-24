@@ -5,7 +5,7 @@ date: 2020-12-10 11:45:00
 icon: fas fa-leaf accent3
 actions:
   - action: 'Read Politicising Climate'
-    link: /files/arg-gl_politicisingclimate.pdf
+    link: /uploads/arg-gl_politicisingclimate.pdf
 aliases:
   - /policy/climate/
   - /policy/climate.html

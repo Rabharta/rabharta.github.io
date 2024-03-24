@@ -5,7 +5,7 @@ date: 2021-09-17 13:00:00
 icon: fas fa-leaf accent3
 actions:
   - action: 'Read our Response'
-    link: /files/confirmation-of-position/cop_on_housing.pdf
+    link: /uploads/cop_on_housing.pdf
 aliases:
   - /policy/housing/
   - /policy/housing.html
