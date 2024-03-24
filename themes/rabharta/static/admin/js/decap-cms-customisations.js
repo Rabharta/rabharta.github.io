@@ -70,7 +70,7 @@ const PeoplePagePreview = createClass({
     const body = this.props.widgetFor('body');
 
     return makePageWrap(data, null, [
-      makeContentBanner(data.name, data.constituency, data.banner),
+      makeContentBanner(data.title, data.constituency, data.banner),
       makeContent(body, data.actions)
     ]);
   }
