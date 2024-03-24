@@ -49,5 +49,40 @@ menus:
 languages:
   en:
     title: 'Rabharta'
+    languageName: English
+    weight: 1
   ga:
     title: 'Rabharta'
+    languageName: Gaeilge
+    weight: 2
+    menus:
+      main:
+      - name: 'Cláraigh Linn'
+        url: '/join'
+        weight: 1
+      - name: 'Fúinn'
+        pageRef: '/about'
+        weight: 2
+      - name: 'Daoine'
+        pageRef: '/people'
+        weight: 3
+      - name: 'Ár mBunús'
+        pageRef: '/values'
+        weight: 4
+      - name: 'Ár bhFís'
+        pageRef: '/vision'
+        weight: 5
+      - parent: 'Ár bhFís'
+        name: 'Tithíocht'
+        url: '/policy/housing'
+        weight: 1
+      - parent: 'Ár bhFís'
+        name: 'Aeráid'
+        url: '/policy/climate'
+        weight: 1
+      - name: 'Blag'
+        pageRef: '/posts'
+        weight: 6
+      - name: 'Baill'
+        url: '/members'
+        weight: 7

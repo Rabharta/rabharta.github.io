@@ -4,7 +4,7 @@
     <div class="headerWrapper">
         <div class="logo">
             <a class="site-title" href='{{ relLangURL "/" }}'>
-                <img src="/theme/images/an-rabharta-glas-logo.svg" alt="Site Logo" title="{{ .Site.Title }}" />
+                <img src="/theme/images/rabharta-logo.svg" alt="Site Logo" title="{{ .Site.Title }}" />
             </a>
         </div>
 
@@ -17,7 +17,7 @@
                     {{ $hasChildren := or $hasHardcodedChildren $isIndexPageWithChildren }}
 
                     {{ if not $hasChildren }}
-                        <a href="{{ .URL }}">{{ .Name }}</a>
+                        <a href="{{ .URL }}">{{ or (T .Identifier) .Name | safeHTML }}</a>
                     {{ else }}
 
                         <a class="icon solid fa-angle-down" href="{{ .URL }}">{{ .Name }}</a>
@@ -43,6 +43,13 @@
                         {{ end }}
                     {{ end }}
                 </li>
+                {{ end }}
+
+                {{/*  {{ TODO: Put this selector somewhere other than main nav }}  */}}
+                {{ if $.IsTranslated }}
+                {{ range $.Translations }}
+                    <li><a class="icon solid" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                {{ end }}
                 {{ end }}
             </ul>
         </nav>

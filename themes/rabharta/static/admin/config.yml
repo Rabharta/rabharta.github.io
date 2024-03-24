@@ -9,6 +9,10 @@ media_folder: /static/uploads/
 public_folder: /uploads/
 logo_url: /theme/images/an-rabharta-glas-logo.svg
 publish_mode: editorial_workflow
+i18n:
+  structure: multiple_files
+  locales: [en, ga]
+  default_locale: en
 
 collections:
   - name: 'pages'
@@ -86,7 +90,83 @@ collections:
               - {label: 'Label', name: 'action', widget: 'string'}
               # TODO: Make a custom relation widget to choose from all content
               - {label: 'Link', name: 'link', widget: 'string'}
+  - name: 'pages-ga'
+    label: 'Pages (Gaeilge)'
+    files:
+      - label: 'Homepage'
+        name: 'homepage'
+        file: 'content/_index.ga.md'
+        fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Banner Heading', name: 'bannerheading', widget: 'text'}
+          - {label: 'Banner Subheading', name: 'bannersubheading', widget: 'string'}
+          - label: 'Banner Actions'
+            name: 'banneractions'
+            widget: 'list'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              # TODO: Make a custom relation widget to choose from all content
+              - {label: 'Link', name: 'link', widget: 'string'}
+          - {label: 'Content Heading', name: 'heading', widget: 'string'}
+          - {label: 'Content Image', name: 'image', widget: 'image', choose_url: false}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+          - label: 'Content Actions'
+            name: 'actions'
+            widget: 'list'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              # TODO: Make a custom relation widget to choose from all content
+              - {label: 'Link', name: 'link', widget: 'string'}
+      - label: 'About page'
+        name: 'about'
+        file: 'content/about.ga.md'
+        fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'People page'
+        name: 'people'
+        file: 'content/people/_index.ga.md'
+        fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Values page'
+        name: 'values'
+        file: 'content/values.ga.md'
+        fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
+          - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+          - label: 'Actions'
+            name: 'actions'
+            widget: 'list'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              # TODO: Make a custom relation widget to choose from all content
+              - {label: 'Link', name: 'link', widget: 'string'}
+      - label: 'Vision page'
+        name: 'vision'
+        file: 'content/vision/index.ga.md'
+        fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Subtitle', name: 'subtitle', widget: 'string'}
+          - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+          - label: 'Actions'
+            name: 'actions'
+            widget: 'list'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              # TODO: Make a custom relation widget to choose from all content
+              - {label: 'Link', name: 'link', widget: 'string'}
   - name: 'programme'
+    i18n: true
     label: 'Programme pages'
     folder: 'content/policy/'
     create: true
@@ -107,6 +187,7 @@ collections:
           # TODO: Make a custom relation widget to choose from all content
           - {label: 'Link', name: 'link', widget: 'string'}
   - name: 'people'
+    i18n: true
     label: 'Candidate profiles'
     folder: 'content/people/'
     path: '{{name}}'
@@ -135,6 +216,7 @@ collections:
           # TODO: Make a custom relation widget to choose from all content
           - {label: 'Link', name: 'link', widget: 'string'}
   - name: 'blog'
+    i18n: true
     label: 'Blog Post'
     folder: 'content/posts/'
     # Note: Decap bug/peculiarity: need to specify media_folder & public_folder for each "folder" type collection (not required for "file" collections)
@@ -174,6 +256,37 @@ collections:
       - label: 'Contact Form Error Page'
         name: 'contact-us-failure'
         file: 'content/contact-us/failure.md'
+        fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+  - name: 'contact-pages-ga'
+    label: 'Contact Pages (Gaeilge)'
+    files:
+      - label: 'Contact Page'
+        name: 'contact-us'
+        file: 'content/contact-us/_index.ga.md'
+        fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Child Protection Officer'
+        name: 'child-protection-officer'
+        file: 'content/contact-us/child-protection-officer.ga.md'
+        fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Contact Form Success Page'
+        name: 'contact-us-sent'
+        file: 'content/contact-us/sent.ga.md'
+        fields:
+          - {label: 'Browser tab title', name: 'meta_title', required: false}
+          - {label: 'Title', name: 'title', widget: 'string'}
+          - {label: 'Content', name: 'body', widget: 'markdown'}
+      - label: 'Contact Form Error Page'
+        name: 'contact-us-failure'
+        file: 'content/contact-us/failure.ga.md'
         fields:
           - {label: 'Browser tab title', name: 'meta_title', required: false}
           - {label: 'Title', name: 'title', widget: 'string'}

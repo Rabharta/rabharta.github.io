@@ -9,9 +9,9 @@
                     <p><time
                         class="post-date"
                         datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}'>
-                        {{ .Date.Format "January 2, 2006" }}
+                        {{ .Date | time.Format "January 2, 2006" }}
                     </time></p>
-                    <p><em>{{ printf "Estimated reading time: %d minutes" .ReadingTime }}</em></p>
+                    <p><em>{{ printf (T "blog_post_reading_time_text") .ReadingTime }}</em></p>
                 </header>
 
                 {{ with .Params.thumbnail }}

@@ -11,7 +11,7 @@
 
                 {{ with .Params.photo }}
                 <div class="image filtered" data-position="center">
-                    <img src="{{ . }}" alt="Photo of {{ $.Params.Name }}" />
+                    <img src="{{ . }}" alt='{{ T "candidate_profile_photo_alt_prefix" }} {{ $.Params.Name }}' />
                 </div>
                 {{ end }}
             </section>
