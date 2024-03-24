@@ -1,10 +1,11 @@
 ---
-title: Climate and Environment 
+title: Climate and Environment
 banner: /uploads/politicisingclimatecover.JPG
 date: 2020-12-10 11:45:00
 icon: fas fa-leaf accent3
 actions:
-  - action: 'Read Politicising Climate'
+  - action: Read Politicising Climate
+    type: media-item
     link: /uploads/arg-gl_politicisingclimate.pdf
 aliases:
   - /policy/climate/

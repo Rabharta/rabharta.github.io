@@ -5,6 +5,7 @@ constituency: Limerick
 photo: /uploads/whatsapp-image-2024-03-21-at-17.55.07.jpeg
 actions:
   - link: /uploads/preliminary-mayoral-programme-21.3.24.pdf
+    type: media-item
     action: You can read Laura’s Preliminary Mayoral Programme here.
 ---
 Dr Laura Keyes is the Party Candidate for Directly Elected Mayor of Limerick. Laura is from the North Circular Road in Limerick City. She has a PhD in Public Health and a Fellowship in Epidemiology and currently works as a senior leadership manager in the public sector where she works to drive improvements in health and social care services.

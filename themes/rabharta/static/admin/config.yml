@@ -29,20 +29,162 @@ collections:
           - label: 'Banner Actions'
             name: 'banneractions'
             widget: 'list'
-            fields:
-              - {label: 'Label', name: 'action', widget: 'string'}
-              # TODO: Make a custom relation widget to choose from all content
-              - {label: 'Link', name: 'link', widget: 'string'}
+            types:
+              - label: File
+                name: media-item
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'File', name: 'link', widget: 'file'}
+              - label: 'Site link: Pages'
+                name: site-link-pages
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'pages'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Programme'
+                name: site-link-programme
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'programme'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: People'
+                name: site-link-people
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'people'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Blog'
+                name: site-link-blog
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'blog'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Contact Pages'
+                name: site-link-contact
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'contact-pages'
+                    value_field: title
+                    search_fields: ['title']
+              - label: Web link
+                name: web-link
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'Link', name: 'link', widget: 'string'}
           - {label: 'Content Heading', name: 'heading', widget: 'string'}
           - {label: 'Content Image', name: 'image', widget: 'image', choose_url: false}
           - {label: 'Content', name: 'body', widget: 'markdown'}
           - label: 'Content Actions'
             name: 'actions'
             widget: 'list'
-            fields:
-              - {label: 'Label', name: 'action', widget: 'string'}
-              # TODO: Make a custom relation widget to choose from all content
-              - {label: 'Link', name: 'link', widget: 'string'}
+            types:
+              - label: File
+                name: media-item
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'File', name: 'link', widget: 'file'}
+              - label: 'Site link: Pages'
+                name: site-link-pages
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'pages'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Programme'
+                name: site-link-programme
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'programme'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: People'
+                name: site-link-people
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'people'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Blog'
+                name: site-link-blog
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'blog'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Contact Pages'
+                name: site-link-contact
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'contact-pages'
+                    value_field: title
+                    search_fields: ['title']
+              - label: Web link
+                name: web-link
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'Link', name: 'link', widget: 'string'}
       - label: 'About page'
         name: 'about'
         file: 'content/about.md'
@@ -70,10 +212,81 @@ collections:
           - label: 'Actions'
             name: 'actions'
             widget: 'list'
-            fields:
-              - {label: 'Label', name: 'action', widget: 'string'}
-              # TODO: Make a custom relation widget to choose from all content
-              - {label: 'Link', name: 'link', widget: 'string'}
+            types:
+              - label: File
+                name: media-item
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'File', name: 'link', widget: 'file'}
+              - label: 'Site link: Pages'
+                name: site-link-pages
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'pages'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Programme'
+                name: site-link-programme
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'programme'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: People'
+                name: site-link-people
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'people'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Blog'
+                name: site-link-blog
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'blog'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Contact Pages'
+                name: site-link-contact
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'contact-pages'
+                    value_field: title
+                    search_fields: ['title']
+              - label: Web link
+                name: web-link
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'Link', name: 'link', widget: 'string'}
       - label: 'Vision page'
         name: 'vision'
         file: 'content/vision/index.md'
@@ -86,10 +299,81 @@ collections:
           - label: 'Actions'
             name: 'actions'
             widget: 'list'
-            fields:
-              - {label: 'Label', name: 'action', widget: 'string'}
-              # TODO: Make a custom relation widget to choose from all content
-              - {label: 'Link', name: 'link', widget: 'string'}
+            types:
+              - label: File
+                name: media-item
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'File', name: 'link', widget: 'file'}
+              - label: 'Site link: Pages'
+                name: site-link-pages
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'pages'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Programme'
+                name: site-link-programme
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'programme'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: People'
+                name: site-link-people
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'people'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Blog'
+                name: site-link-blog
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'blog'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Contact Pages'
+                name: site-link-contact
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'contact-pages'
+                    value_field: title
+                    search_fields: ['title']
+              - label: Web link
+                name: web-link
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'Link', name: 'link', widget: 'string'}
   - name: 'pages-ga'
     label: 'Pages (Gaeilge)'
     files:
@@ -104,20 +388,162 @@ collections:
           - label: 'Banner Actions'
             name: 'banneractions'
             widget: 'list'
-            fields:
-              - {label: 'Label', name: 'action', widget: 'string'}
-              # TODO: Make a custom relation widget to choose from all content
-              - {label: 'Link', name: 'link', widget: 'string'}
+            types:
+              - label: File
+                name: media-item
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'File', name: 'link', widget: 'file'}
+              - label: 'Site link: Pages'
+                name: site-link-pages
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'pages-ga'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Programme'
+                name: site-link-programme
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'programme'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: People'
+                name: site-link-people
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'people'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Blog'
+                name: site-link-blog
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'blog'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Contact Pages'
+                name: site-link-contact
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'contact-pages-ga'
+                    value_field: title
+                    search_fields: ['title']
+              - label: Web link
+                name: web-link
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'Link', name: 'link', widget: 'string'}
           - {label: 'Content Heading', name: 'heading', widget: 'string'}
           - {label: 'Content Image', name: 'image', widget: 'image', choose_url: false}
           - {label: 'Content', name: 'body', widget: 'markdown'}
           - label: 'Content Actions'
             name: 'actions'
             widget: 'list'
-            fields:
-              - {label: 'Label', name: 'action', widget: 'string'}
-              # TODO: Make a custom relation widget to choose from all content
-              - {label: 'Link', name: 'link', widget: 'string'}
+            types:
+              - label: File
+                name: media-item
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'File', name: 'link', widget: 'file'}
+              - label: 'Site link: Pages'
+                name: site-link-pages
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'pages-ga'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Programme'
+                name: site-link-programme
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'programme'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: People'
+                name: site-link-people
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'people'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Blog'
+                name: site-link-blog
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'blog'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Contact Pages'
+                name: site-link-contact
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'contact-pages-ga'
+                    value_field: title
+                    search_fields: ['title']
+              - label: Web link
+                name: web-link
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'Link', name: 'link', widget: 'string'}
       - label: 'About page'
         name: 'about'
         file: 'content/about.ga.md'
@@ -144,11 +570,81 @@ collections:
           - {label: 'Content', name: 'body', widget: 'markdown'}
           - label: 'Actions'
             name: 'actions'
-            widget: 'list'
-            fields:
-              - {label: 'Label', name: 'action', widget: 'string'}
-              # TODO: Make a custom relation widget to choose from all content
-              - {label: 'Link', name: 'link', widget: 'string'}
+            types:
+              - label: File
+                name: media-item
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'File', name: 'link', widget: 'file'}
+              - label: 'Site link: Pages'
+                name: site-link-pages
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'pages-ga'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Programme'
+                name: site-link-programme
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'programme'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: People'
+                name: site-link-people
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'people'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Blog'
+                name: site-link-blog
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'blog'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Contact Pages'
+                name: site-link-contact
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'contact-pages-ga'
+                    value_field: title
+                    search_fields: ['title']
+              - label: Web link
+                name: web-link
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'Link', name: 'link', widget: 'string'}
       - label: 'Vision page'
         name: 'vision'
         file: 'content/vision/index.ga.md'
@@ -161,10 +657,81 @@ collections:
           - label: 'Actions'
             name: 'actions'
             widget: 'list'
-            fields:
-              - {label: 'Label', name: 'action', widget: 'string'}
-              # TODO: Make a custom relation widget to choose from all content
-              - {label: 'Link', name: 'link', widget: 'string'}
+            types:
+              - label: File
+                name: media-item
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'File', name: 'link', widget: 'file'}
+              - label: 'Site link: Pages'
+                name: site-link-pages
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'pages-ga'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Programme'
+                name: site-link-programme
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'programme'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: People'
+                name: site-link-people
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'people'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Blog'
+                name: site-link-blog
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'blog'
+                    value_field: title
+                    search_fields: ['title']
+              - label: 'Site link: Contact Pages'
+                name: site-link-contact
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - label: 'Link'
+                    name: 'link'
+                    widget: 'relation'
+                    collection: 'contact-pages-ga'
+                    value_field: title
+                    search_fields: ['title']
+              - label: Web link
+                name: web-link
+                widget: object
+                summary: '{{fields.action}}'
+                fields:
+                  - {label: 'Label', name: 'action', widget: 'string'}
+                  - {label: 'Link', name: 'link', widget: 'string'}
   - name: 'programme'
     i18n: true
     label: 'Programme pages'
@@ -182,10 +749,81 @@ collections:
       - label: 'Actions'
         name: 'actions'
         widget: 'list'
-        fields:
-          - {label: 'Label', name: 'action', widget: 'string'}
-          # TODO: Make a custom relation widget to choose from all content
-          - {label: 'Link', name: 'link', widget: 'string'}
+        types:
+          - label: File
+            name: media-item
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - {label: 'File', name: 'link', widget: 'file'}
+          - label: 'Site link: Pages'
+            name: site-link-pages
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'pages'
+                value_field: title
+                search_fields: ['title']
+          - label: 'Site link: Programme'
+            name: site-link-programme
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'programme'
+                value_field: title
+                search_fields: ['title']
+          - label: 'Site link: People'
+            name: site-link-people
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'people'
+                value_field: title
+                search_fields: ['title']
+          - label: 'Site link: Blog'
+            name: site-link-blog
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'blog'
+                value_field: title
+                search_fields: ['title']
+          - label: 'Site link: Contact Pages'
+            name: site-link-contact
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'contact-pages'
+                value_field: title
+                search_fields: ['title']
+          - label: Web link
+            name: web-link
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - {label: 'Link', name: 'link', widget: 'string'}
   - name: 'people'
     i18n: true
     label: 'Candidate profiles'
@@ -211,10 +849,81 @@ collections:
       - label: 'Actions'
         name: 'actions'
         widget: 'list'
-        fields:
-          - {label: 'Label', name: 'action', widget: 'string'}
-          # TODO: Make a custom relation widget to choose from all content
-          - {label: 'Link', name: 'link', widget: 'string'}
+        types:
+          - label: File
+            name: media-item
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - {label: 'File', name: 'link', widget: 'file'}
+          - label: 'Site link: Pages'
+            name: site-link-pages
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'pages'
+                value_field: title
+                search_fields: ['title']
+          - label: 'Site link: Programme'
+            name: site-link-programme
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'programme'
+                value_field: title
+                search_fields: ['title']
+          - label: 'Site link: People'
+            name: site-link-people
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'people'
+                value_field: title
+                search_fields: ['title']
+          - label: 'Site link: Blog'
+            name: site-link-blog
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'blog'
+                value_field: title
+                search_fields: ['title']
+          - label: 'Site link: Contact Pages'
+            name: site-link-contact
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - label: 'Link'
+                name: 'link'
+                widget: 'relation'
+                collection: 'contact-pages'
+                value_field: title
+                search_fields: ['title']
+          - label: Web link
+            name: web-link
+            widget: object
+            summary: '{{fields.action}}'
+            fields:
+              - {label: 'Label', name: 'action', widget: 'string'}
+              - {label: 'Link', name: 'link', widget: 'string'}
   - name: 'blog'
     i18n: true
     label: 'Blog Post'
