@@ -742,13 +742,14 @@ collections:
     media_folder: '{{media_folder}}'
     public_folder: '{{public_folder}}'
     fields:
-      - {label: 'Browser tab title', name: 'meta_title', required: false}
-      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Browser tab title', name: 'meta_title', required: false, i18n: true}
+      - {label: 'Title', name: 'title', widget: 'string', i18n: true}
       - {label: 'Banner Image', name: 'banner', widget: 'image', choose_url: false}
-      - {label: 'Content', name: 'body', widget: 'markdown'}
+      - {label: 'Content', name: 'body', widget: 'markdown', i18n: true}
       - label: 'Actions'
         name: 'actions'
         widget: 'list'
+        i18n: true
         types:
           - label: File
             name: media-item
@@ -839,16 +840,18 @@ collections:
     fields:
       # Part of above list_page hack
       - {label: 'List page hack', name: 'list_page', widget: 'hidden', default: false}
-      - {label: 'Browser tab title', name: 'meta_title', required: false}
-      - {label: 'Candidate name', name: 'title', widget: 'string'}
+      - {label: 'Browser tab title', name: 'meta_title', required: false, i18n: true}
+      - {label: 'Candidate name', name: 'title', widget: 'string', i18n: true}
       - label: 'Constituency'
         name: 'constituency'
         widget: 'string'
+        i18n: true
       - {label: 'Candidate Photo', name: 'photo', widget: 'image', choose_url: false}
-      - {label: 'Content', name: 'body', widget: 'markdown'}
+      - {label: 'Content', name: 'body', widget: 'markdown', i18n: true}
       - label: 'Actions'
         name: 'actions'
         widget: 'list'
+        i18n: true
         types:
           - label: File
             name: media-item
@@ -933,11 +936,11 @@ collections:
     public_folder: '{{public_folder}}'
     create: true
     fields:
-      - {label: 'Browser tab title', name: 'meta_title', required: false}
-      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Browser tab title', name: 'meta_title', required: false, i18n: true}
+      - {label: 'Title', name: 'title', widget: 'string', i18n: true}
       - {label: 'Publish Date', name: 'date', widget: 'datetime'}
       - {label: 'Featured Image', name: 'thumbnail', widget: 'image', choose_url: false}
-      - {label: 'Body', name: 'body', widget: 'markdown'}
+      - {label: 'Body', name: 'body', widget: 'markdown', i18n: true}
   - name: 'contact-pages'
     label: 'Contact Pages'
     files:
