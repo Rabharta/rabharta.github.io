@@ -5,7 +5,7 @@ meta_title: ""
 title: Home
 bannerheading: |
   RABHARTA
-bannersubheading: The Party For Worker And Carers
+bannersubheading: The Party For Workers And Carers
 banneractions:
   - type: site-link-pages
     link: About Us
