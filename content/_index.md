@@ -1,11 +1,11 @@
 ---
 heading: Working for a Just Transition
 date: 2020-12-10 11:45:00
+meta_title: ""
 title: Home
 bannerheading: |
-  Rabharta:
-  The Party For Workers And Carers
-bannersubheading: Comhshaol agus Comhionannas
+  RABHARTA
+bannersubheading: The Party For Worker And Carers
 banneractions:
   - type: site-link-pages
     link: About Us
